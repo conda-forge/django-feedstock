@@ -1,4 +1,4 @@
-{% set version = "1.9.5" %}
+{% set version = "1.9.6" %}
 
 package:
     name: django
@@ -6,8 +6,8 @@ package:
 
 source:
     fn: Django-{{ version }}.tar.gz
-    url: https://pypi.python.org/packages/source/D/Django/Django-{{ version }}.tar.gz
-    md5: 419835cef8d42a1a0a3fd6e1eaa24475
+    url: https://pypi.io/packages/source/D/Django/Django-{{ version }}.tar.gz
+    md5: 07d9b3883198caa847b917c94b665452
     patches:
         # Hard-code gdal and geos' paths to the corresponding conda packages.
         - libgdal.patch
@@ -34,7 +34,7 @@ test:
         - django
         - django.apps
         - django.conf
-        - django.conf.app_template.migrations
+        - django.conf.app_template.migrations  # [not py27]
         - django.conf.locale
         - django.conf.locale.ar
         - django.conf.locale.az
