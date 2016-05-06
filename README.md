@@ -5,7 +5,7 @@ Home: http://www.djangoproject.com/
 
 Package license: BSD License
 
-Feedstock license: BSD
+Feedstock license: BSD 3-Clause
 
 Summary: A high-level Python Web framework that encourages rapid development and clean, pragmatic design.
 
