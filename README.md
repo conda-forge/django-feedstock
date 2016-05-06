@@ -3,9 +3,9 @@ About django
 
 Home: http://www.djangoproject.com/
 
-Package license: BSD License
+Package license: BSD 3-Clause
 
-Feedstock license: BSD
+Feedstock license: BSD 3-Clause
 
 Summary: A high-level Python Web framework that encourages rapid development and clean, pragmatic design.
 
