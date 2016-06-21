@@ -1,4 +1,4 @@
-{% set version = "1.9.6" %}
+{% set version = "1.9.7" %}
 
 package:
     name: django
@@ -7,7 +7,7 @@ package:
 source:
     fn: Django-{{ version }}.tar.gz
     url: https://pypi.io/packages/source/D/Django/Django-{{ version }}.tar.gz
-    md5: 07d9b3883198caa847b917c94b665452
+    md5: 7de9ba83bfe01f4b7d45645c1b259c83
     patches:
         # Hard-code gdal and geos' paths to the corresponding conda packages.
         - libgdal.patch
@@ -25,7 +25,7 @@ requirements:
         - setuptools
     run:
         - python
-        - gdal >=1.11.2,<2.0  # [not py35]
+        - gdal 2.1.*
 
 test:
     requires:
@@ -123,34 +123,34 @@ test:
         - django.contrib.flatpages
         - django.contrib.flatpages.migrations
         - django.contrib.flatpages.templatetags
-        - django.contrib.gis  # [not py35]
+        - django.contrib.gis
         #- django.contrib.gis.admin
-        - django.contrib.gis.db  # [not py35]
-        - django.contrib.gis.db.backends  # [not py35]
-        - django.contrib.gis.db.backends.base  # [not py35]
-        - django.contrib.gis.db.backends.mysql  # [not py35]
-        - django.contrib.gis.db.backends.oracle  # [not py35]
-        - django.contrib.gis.db.backends.postgis  # [not py35]
-        - django.contrib.gis.db.backends.spatialite  # [not py35]
+        - django.contrib.gis.db
+        - django.contrib.gis.db.backends
+        - django.contrib.gis.db.backends.base
+        - django.contrib.gis.db.backends.mysql
+        - django.contrib.gis.db.backends.oracle
+        - django.contrib.gis.db.backends.postgis
+        - django.contrib.gis.db.backends.spatialite
         #- django.contrib.gis.db.models
         #- django.contrib.gis.db.models.sql
-        - django.contrib.gis.forms  # [not py35]
-        - django.contrib.gis.gdal  # [not py35]
-        - django.contrib.gis.gdal.prototypes  # [not py35]
-        - django.contrib.gis.gdal.raster  # [not py35]
+        - django.contrib.gis.forms
+        - django.contrib.gis.gdal
+        - django.contrib.gis.gdal.prototypes
+        - django.contrib.gis.gdal.raster
         #- django.contrib.gis.geoip
-        - django.contrib.gis.geometry  # [not py35]
+        - django.contrib.gis.geometry
         #- django.contrib.gis.geometry.backend
-        - django.contrib.gis.geos  # [not py35]
-        - django.contrib.gis.geos.prototypes  # [not py35]
-        - django.contrib.gis.management  # [not py35]
-        - django.contrib.gis.management.commands  # [not py35]
-        - django.contrib.gis.maps  # [not py35]
-        - django.contrib.gis.maps.google  # [not py35]
-        - django.contrib.gis.maps.openlayers  # [not py35]
-        - django.contrib.gis.serializers  # [not py35]
+        - django.contrib.gis.geos
+        - django.contrib.gis.geos.prototypes
+        - django.contrib.gis.management
+        - django.contrib.gis.management.commands
+        - django.contrib.gis.maps
+        - django.contrib.gis.maps.google
+        - django.contrib.gis.maps.openlayers
+        - django.contrib.gis.serializers
         #- django.contrib.gis.sitemaps
-        - django.contrib.gis.utils  # [not py35]
+        - django.contrib.gis.utils
         - django.contrib.humanize
         - django.contrib.humanize.templatetags
         - django.contrib.messages
