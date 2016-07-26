@@ -25,7 +25,8 @@ requirements:
         - setuptools
     run:
         - python
-        - gdal 2.1.*
+        # Django does not work with gdal 2.x.
+        - gdal 1.11.*
 
 test:
     requires:
