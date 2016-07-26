@@ -1,4 +1,4 @@
-{% set version = "1.9.7" %}
+{% set version = "1.9.8" %}
 
 package:
     name: django
@@ -7,7 +7,7 @@ package:
 source:
     fn: Django-{{ version }}.tar.gz
     url: https://pypi.io/packages/source/D/Django/Django-{{ version }}.tar.gz
-    md5: 7de9ba83bfe01f4b7d45645c1b259c83
+    md5: 486d18b73d38313058ec8f81b765421c
     patches:
         # Hard-code gdal and geos' paths to the corresponding conda packages.
         - libgdal.patch
