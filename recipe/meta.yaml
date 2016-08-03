@@ -1,4 +1,4 @@
-{% set version = "1.9.8" %}
+{% set version = "1.10" %}
 
 package:
     name: django
@@ -7,7 +7,7 @@ package:
 source:
     fn: Django-{{ version }}.tar.gz
     url: https://pypi.io/packages/source/D/Django/Django-{{ version }}.tar.gz
-    md5: 486d18b73d38313058ec8f81b765421c
+    md5: 939e4d989b93a4e12e4ec5d98fcdb4f5
     patches:
         # Hard-code gdal and geos' paths to the corresponding conda packages.
         - libgdal.patch
@@ -176,11 +176,7 @@ test:
         - django.contrib.staticfiles.management.commands
         - django.contrib.staticfiles.templatetags
         - django.contrib.syndication
-        - django.contrib.webdesign
-        - django.contrib.webdesign.templatetags
         - django.core
-        #- django.core.cache
-        #- django.core.cache.backends
         - django.core.checks
         - django.core.checks.compatibility
         - django.core.checks.security
