@@ -1,13 +1,13 @@
-{% set version = "1.10" %}
+{% set version = "1.10.1" %}
 
 package:
     name: django
     version: {{ version }}
 
 source:
-    fn: Django-{{ version }}.tar.gz
-    url: https://pypi.io/packages/source/D/Django/Django-{{ version }}.tar.gz
-    md5: 939e4d989b93a4e12e4ec5d98fcdb4f5
+    fn: django-{{ version }}.tar.gz
+    url: https://github.com/django/django/archive/{{ version }}.tar.gz
+    sha256: 82a085c3bdb6e88a169dc77258b00729cc3e69f802704e8d600128cd992a2d17
     patches:
         # Hard-code gdal and geos' paths to the corresponding conda packages.
         - libgdal.patch
