@@ -1,5 +1,5 @@
---- django/contrib/gis/gdal/libgdal.py	2016-08-01 15:12:34.000000000 -0300
-+++ django/contrib/gis/gdal/libgdal.py	2016-08-03 07:42:31.341152913 -0300
+--- django-1.10.3.orig/django/contrib/gis/gdal/libgdal.py	2016-11-01 10:36:44.000000000 -0300
++++ django-1.10.3/django/contrib/gis/gdal/libgdal.py	2016-11-03 06:10:55.290132740 -0300
 @@ -2,6 +2,7 @@
  
  import logging
@@ -8,11 +8,10 @@
  import re
  from ctypes import CDLL, CFUNCTYPE, c_char_p, c_int
  from ctypes.util import find_library
-@@ -11,13 +12,12 @@
- 
+@@ -12,12 +13,12 @@
  logger = logging.getLogger('django.contrib.gis')
  
--# Custom library path set?
+ # Custom library path set?
 -try:
 -    from django.conf import settings
 -    lib_path = settings.GDAL_LIBRARY_PATH
@@ -22,9 +21,9 @@
 +if 'linux' in sys.platform:
 +    lib_path = os.path.join(sys.prefix, 'lib', 'libgdal.so')
 +elif 'darwin' in sys.platform:
-+    lib_path = os.path.join(sys.prefix, 'lib', 'libgdal.1.dylib')
++    lib_path = os.path.join(sys.prefix, 'lib', 'libgdal.dylib')
 +elif os.name == 'nt':
-+    lib_path = os.path.join(sys.prefix, 'Library', 'bin', 'gdal111.dll')
++    lib_path = os.path.join(sys.prefix, 'Library', 'bin', 'gdal201.dll')
  
  if lib_path:
      lib_names = None
