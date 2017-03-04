@@ -25,11 +25,11 @@ requirements:
     - setuptools
   run:
     - python
-    - gdal 2.1.*
 
 test:
   requires:
     - psycopg2  # [not win]
+    - gdal 2.1.*  # Test optional dependency.
   imports:
     - django
     - django.apps
