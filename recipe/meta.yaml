@@ -1,4 +1,4 @@
-{% set version = "1.10.5" %}
+{% set version = "1.9.12" %}
 
 package:
   name: django
@@ -7,7 +7,7 @@ package:
 source:
   fn: django-{{ version }}.tar.gz
   url: https://github.com/django/django/archive/{{ version }}.tar.gz
-  sha256: 65e2e8bcfb630cc26ac40599d3b0745efd66c5da138843e933e13fafeccb4742
+  sha256: c13ed84710fe1f276423b14a9b5811a4fdd8ea3abb0697ba8f66caecea079591
   patches:
     # Hard-code gdal and geos' paths to the corresponding conda packages.
     - libgdal.patch
@@ -25,11 +25,11 @@ requirements:
     - setuptools
   run:
     - python
-    - gdal 2.1.*
 
 test:
   requires:
     - psycopg2  # [not win]
+    - gdal 2.1.*
   imports:
     - django
     - django.apps
