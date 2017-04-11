@@ -1,4 +1,4 @@
-{% set version = "1.8.16" %}
+{% set version = "1.8.18" %}
 
 package:
   name: django
@@ -6,8 +6,8 @@ package:
 
 source:
   fn: Django-{{ version }}.tar.gz
-  url: https://github.com/django/django/archive/{{ version }}.tar.gz
-  sha256: 6227480ac16f181172366d8731aeb95cb3554e854a75d7c302283382db0eb6c3
+  url: https://pypi.io/packages/source/D/Django/Django-{{ version }}.tar.gz
+  sha256: c7611cdd5e2539a443b7960c7cafd867d986c2720a1b44808deaa60ce3da50c7
   patches:
     # Hard-code gdal and geos' paths to the corresponding conda packages.
     - libgdal.patch
@@ -29,7 +29,10 @@ requirements:
 
 test:
   requires:
+    # Test optional dependency.
     - psycopg2  # [not win]
+    - gdal 2.1.*
+    - pytz
   imports:
     - django
     - django.apps
@@ -70,7 +73,6 @@ test:
     - django.conf.locale.hr
     - django.conf.locale.hu
     - django.conf.locale.id
-    #- django.conf.locale.is
     - django.conf.locale.it
     - django.conf.locale.ja
     - django.conf.locale.ka
@@ -102,31 +104,17 @@ test:
     - django.conf.locale.tr
     - django.conf.locale.uk
     - django.conf.locale.vi
-    - django.conf.locale.zh_CN
     - django.conf.locale.zh_Hans
     - django.conf.locale.zh_Hant
-    - django.conf.locale.zh_TW
     - django.conf.urls
     - django.contrib
-    #- django.contrib.admin
-    #- django.contrib.admin.migrations
-    #- django.contrib.admin.templatetags
-    #- django.contrib.admin.views
     - django.contrib.admindocs
-    - django.contrib.admindocs.tests
-    #- django.contrib.auth
-    #- django.contrib.auth.handlers
-    #- django.contrib.auth.management
-    #- django.contrib.auth.management.commands
-    #- django.contrib.auth.migrations
-    #- django.contrib.auth.tests
     - django.contrib.contenttypes
     - django.contrib.contenttypes.migrations
     - django.contrib.flatpages
     - django.contrib.flatpages.migrations
     - django.contrib.flatpages.templatetags
     - django.contrib.gis
-    #- django.contrib.gis.admin
     - django.contrib.gis.db
     - django.contrib.gis.db.backends
     - django.contrib.gis.db.backends.base
@@ -134,31 +122,22 @@ test:
     - django.contrib.gis.db.backends.oracle
     - django.contrib.gis.db.backends.postgis
     - django.contrib.gis.db.backends.spatialite
-    #- django.contrib.gis.db.models
-    #- django.contrib.gis.db.models.sql
     - django.contrib.gis.forms
     - django.contrib.gis.gdal
     - django.contrib.gis.gdal.prototypes
     - django.contrib.gis.gdal.raster
-    #- django.contrib.gis.geoip
     - django.contrib.gis.geometry
-    #- django.contrib.gis.geometry.backend
     - django.contrib.gis.geos
     - django.contrib.gis.geos.prototypes
     - django.contrib.gis.management
     - django.contrib.gis.management.commands
-    - django.contrib.gis.maps
-    - django.contrib.gis.maps.google
-    - django.contrib.gis.maps.openlayers
     - django.contrib.gis.serializers
-    #- django.contrib.gis.sitemaps
     - django.contrib.gis.utils
     - django.contrib.humanize
     - django.contrib.humanize.templatetags
     - django.contrib.messages
     - django.contrib.messages.storage
     - django.contrib.postgres  # [not win]
-    #- django.contrib.postgres.fields  # [not win]
     - django.contrib.postgres.forms  # [not win]
     - django.contrib.redirects
     - django.contrib.redirects.migrations
@@ -177,11 +156,7 @@ test:
     - django.contrib.staticfiles.management.commands
     - django.contrib.staticfiles.templatetags
     - django.contrib.syndication
-    - django.contrib.webdesign
-    - django.contrib.webdesign.templatetags
     - django.core
-    #- django.core.cache
-    #- django.core.cache.backends
     - django.core.checks
     - django.core.checks.compatibility
     - django.core.checks.security
@@ -227,8 +202,10 @@ test:
 about:
   home: http://www.djangoproject.com/
   license: BSD 3-Clause
+  license_file: LICENSE
   summary: 'A high-level Python Web framework that encourages rapid development and clean, pragmatic design.'
 
 extra:
   recipe-maintainers:
     - kwilcox
+    - ocefpaf
