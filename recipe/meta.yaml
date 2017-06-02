@@ -135,13 +135,13 @@ test:
     - django.contrib.gis.gdal  # [not win and not py2k]
     - django.contrib.gis.gdal.prototypes  # [not win and not py2k]
     - django.contrib.gis.gdal.raster  # [not win and not py2k]
-    - django.contrib.gis.geometry
-    - django.contrib.gis.geos
-    - django.contrib.gis.geos.prototypes
-    - django.contrib.gis.management
-    - django.contrib.gis.management.commands
-    - django.contrib.gis.serializers
-    - django.contrib.gis.utils
+    - django.contrib.gis.geometry  # [not win and not py2k]
+    - django.contrib.gis.geos  # [not win and not py2k]
+    - django.contrib.gis.geos.prototypes  # [not win and not py2k]
+    - django.contrib.gis.management  # [not win and not py2k]
+    - django.contrib.gis.management.commands  # [not win and not py2k]
+    - django.contrib.gis.serializers  # [not win and not py2k]
+    - django.contrib.gis.utils  # [not win and not py2k]
     - django.contrib.humanize
     - django.contrib.humanize.templatetags
     - django.contrib.messages
