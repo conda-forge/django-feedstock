@@ -1,4 +1,6 @@
 {% set version = "1.11" %}
+{% set sha256 = "b6f3b864944276b4fd1d099952112696558f78b77b39188ac92b6c5e80152c30" %}
+{% set build = "1" %}
 
 package:
   name: django
@@ -7,14 +9,14 @@ package:
 source:
   fn: django-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/D/Django/Django-{{ version }}.tar.gz
-  sha256: b6f3b864944276b4fd1d099952112696558f78b77b39188ac92b6c5e80152c30
+  sha256: {{ sha256 }}
   patches:
     # Hard-code gdal and geos' paths to the corresponding conda packages.
     - libgdal.patch
     - libgeos.patch
 
 build:
-  number: 0
+  number: {{ build }}
   script: python setup.py install --single-version-externally-managed --record=record.txt
   entry_points:
     - django-admin = django.core.management:execute_from_command_line
@@ -25,13 +27,13 @@ requirements:
     - setuptools
   run:
     - python
+    - pytz
 
 test:
   requires:
     # Test optional dependency.
     - psycopg2  # [not win]
     - gdal 2.1.*
-    - pytz
   imports:
     - django
     - django.apps
@@ -213,6 +215,8 @@ about:
   license: BSD 3-Clause
   license_file: LICENSE
   summary: 'A high-level Python Web framework that encourages rapid development and clean, pragmatic design.'
+  dev_url: https://github.com/django/django
+  doc_url: http://www.djangoproject.com/
 
 extra:
   recipe-maintainers:
