@@ -1,6 +1,4 @@
 {% set version = "1.11" %}
-{% set sha256 = "b6f3b864944276b4fd1d099952112696558f78b77b39188ac92b6c5e80152c30" %}
-{% set build = "1" %}
 
 package:
   name: django
@@ -9,14 +7,14 @@ package:
 source:
   fn: django-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/D/Django/Django-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: b6f3b864944276b4fd1d099952112696558f78b77b39188ac92b6c5e80152c30
   patches:
     # Hard-code gdal and geos' paths to the corresponding conda packages.
     - libgdal.patch
     - libgeos.patch
 
 build:
-  number: {{ build }}
+  number: 1
   script: python setup.py install --single-version-externally-managed --record=record.txt
   entry_points:
     - django-admin = django.core.management:execute_from_command_line
@@ -133,7 +131,7 @@ test:
     - django.contrib.gis.db.backends.oracle
     - django.contrib.gis.db.backends.postgis
     - django.contrib.gis.db.backends.spatialite
-    - django.contrib.gis.forms
+    - django.contrib.gis.forms  # [not win and not py2k]
     - django.contrib.gis.gdal
     - django.contrib.gis.gdal.prototypes
     - django.contrib.gis.gdal.raster
