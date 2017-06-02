@@ -132,9 +132,9 @@ test:
     - django.contrib.gis.db.backends.postgis
     - django.contrib.gis.db.backends.spatialite
     - django.contrib.gis.forms  # [not win and not py2k]
-    - django.contrib.gis.gdal
-    - django.contrib.gis.gdal.prototypes
-    - django.contrib.gis.gdal.raster
+    - django.contrib.gis.gdal  # [not win and not py2k]
+    - django.contrib.gis.gdal.prototypes  # [not win and not py2k]
+    - django.contrib.gis.gdal.raster  # [not win and not py2k]
     - django.contrib.gis.geometry
     - django.contrib.gis.geos
     - django.contrib.gis.geos.prototypes
