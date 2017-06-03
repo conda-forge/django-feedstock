@@ -1,4 +1,4 @@
-{% set version = "1.11" %}
+{% set version = "1.11.2" %}
 
 package:
   name: django
@@ -7,14 +7,14 @@ package:
 source:
   fn: django-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/D/Django/Django-{{ version }}.tar.gz
-  sha256: b6f3b864944276b4fd1d099952112696558f78b77b39188ac92b6c5e80152c30
+  sha256: 3c5b070482df4f9e5750539dc1824d353729ee423fd410c579b8cd3dea5b0617
   patches:
     # Hard-code gdal and geos' paths to the corresponding conda packages.
     - libgdal.patch
     - libgeos.patch
 
 build:
-  number: 1
+  number: 0
   script: python setup.py install --single-version-externally-managed --record=record.txt
   entry_points:
     - django-admin = django.core.management:execute_from_command_line
@@ -31,7 +31,7 @@ test:
   requires:
     # Test optional dependency.
     - psycopg2  # [not win]
-    - gdal 2.1.*
+    - gdal
   imports:
     - django
     - django.apps
