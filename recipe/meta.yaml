@@ -14,17 +14,17 @@ source:
 
 build:
   number: 0
-  noarch: python
+  skip: True  # [py2k]
   script: python -m pip install --no-deps --ignore-installed .
   entry_points:
     - django-admin = django.core.management:execute_from_command_line
 
 requirements:
   build:
-    - python >=3.4
+    - python
     - pip
   run:
-    - python >=3.4
+    - python
     - pytz
 
 test:
