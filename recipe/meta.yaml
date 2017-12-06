@@ -117,7 +117,6 @@ test:
     - django.contrib.auth.management
     - django.contrib.auth.management.commands
     - django.contrib.auth.migrations
-    - django.contrib.auth.tests
     - django.contrib.contenttypes
     - django.contrib.contenttypes.migrations
     - django.contrib.flatpages
@@ -192,7 +191,6 @@ test:
     - django.db.models.sql
     - django.dispatch
     - django.forms
-    - django.forms.extras
     - django.http
     - django.middleware
     - django.template
