@@ -1,14 +1,13 @@
---- django-1.10.3.orig/django/contrib/gis/gdal/libgdal.py	2016-11-01 10:36:44.000000000 -0300
-+++ django-1.10.3/django/contrib/gis/gdal/libgdal.py	2016-11-03 06:10:55.290132740 -0300
-@@ -2,6 +2,7 @@
- 
+--- Django-2.0.orig/django/contrib/gis/gdal/libgdal.py	2017-12-02 12:36:16.000000000 -0200
++++ Django-2.0/django/contrib/gis/gdal/libgdal.py	2017-12-06 08:14:42.730016198 -0200
+@@ -1,5 +1,6 @@
  import logging
  import os
 +import sys
  import re
  from ctypes import CDLL, CFUNCTYPE, c_char_p, c_int
  from ctypes.util import find_library
-@@ -12,12 +13,12 @@
+@@ -10,12 +11,12 @@
  logger = logging.getLogger('django.contrib.gis')
  
  # Custom library path set?

@@ -1,17 +1,16 @@
---- django/contrib/gis/geos/libgeos.py	2016-04-01 14:33:55.000000000 -0300
-+++ django/contrib/gis/geos/libgeos.py	2016-04-27 16:06:08.566710862 -0300
-@@ -8,9 +8,9 @@
+--- Django-2.0.orig/django/contrib/gis/geos/libgeos.py	2017-12-02 12:36:16.000000000 -0200
++++ Django-2.0/django/contrib/gis/geos/libgeos.py	2017-12-06 08:12:35.806014360 -0200
+@@ -8,8 +8,8 @@
  """
  import logging
  import os
 +import sys
- import re
  from ctypes import CDLL, CFUNCTYPE, POINTER, Structure, c_char_p
 -from ctypes.util import find_library
  
- from django.contrib.gis.geos.error import GEOSException
  from django.core.exceptions import ImproperlyConfigured
-@@ -20,47 +20,27 @@
+ from django.utils.functional import SimpleLazyObject, cached_property
+@@ -19,47 +19,27 @@
  
  
  def load_geos():
