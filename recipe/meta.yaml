@@ -21,10 +21,10 @@ build:
 
 requirements:
   build:
-    - python
+    - python >=3.4
     - pip
   run:
-    - python
+    - python >=3.4
     - pytz
 
 test:
