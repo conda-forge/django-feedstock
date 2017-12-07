@@ -1,4 +1,4 @@
-{% set version = "1.11.7" %}
+{% set version = "2.0" %}
 
 package:
   name: django
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/D/Django/Django-{{ version }}.tar.gz
-  sha256: 8918e392530d8fc6965a56af6504229e7924c27265893f3949aa0529cd1d4b99
+  sha256: 9614851d4a7ff8cbd32b73c6076441f377c45a5bbff7e771798fb02c43c31f47
   patches:
     # Hard-code gdal and geos' paths to the corresponding conda packages.
     - libgdal.patch
@@ -14,7 +14,7 @@ source:
 
 build:
   number: 0
-  noarch: python
+  skip: True  # [py2k]
   script: python -m pip install --no-deps --ignore-installed .
   entry_points:
     - django-admin = django.core.management:execute_from_command_line
@@ -117,7 +117,6 @@ test:
     - django.contrib.auth.management
     - django.contrib.auth.management.commands
     - django.contrib.auth.migrations
-    - django.contrib.auth.tests
     - django.contrib.contenttypes
     - django.contrib.contenttypes.migrations
     - django.contrib.flatpages
@@ -192,7 +191,6 @@ test:
     - django.db.models.sql
     - django.dispatch
     - django.forms
-    - django.forms.extras
     - django.http
     - django.middleware
     - django.template
