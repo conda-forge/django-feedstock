@@ -1,4 +1,4 @@
-{% set version = "2.0" %}
+{% set version = "2.0.1" %}
 
 package:
   name: django
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/D/Django/Django-{{ version }}.tar.gz
-  sha256: 9614851d4a7ff8cbd32b73c6076441f377c45a5bbff7e771798fb02c43c31f47
+  sha256: d96b804be412a5125a594023ec524a2010a6ffa4d408e5482ab6ff3cb97ec12f
   patches:
     # Hard-code gdal and geos' paths to the corresponding conda packages.
     - libgdal.patch
@@ -32,6 +32,7 @@ test:
     # Test optional dependency.
     - psycopg2  # [not win]
     - libgdal
+    - boost 1.65.1
   imports:
     - django
     - django.apps
