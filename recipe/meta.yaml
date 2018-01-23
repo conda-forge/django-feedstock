@@ -32,6 +32,7 @@ test:
     # Test optional dependency.
     - psycopg2  # [not win]
     - libgdal
+    - boost 1.66.0  # only need to get conda-forge's libkml and boost instead of defaults
   imports:
     - django
     - django.apps
