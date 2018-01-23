@@ -1,5 +1,5 @@
---- django-1.10.3.orig/django/contrib/gis/gdal/libgdal.py	2016-11-01 10:36:44.000000000 -0300
-+++ django-1.10.3/django/contrib/gis/gdal/libgdal.py	2016-11-03 06:10:55.290132740 -0300
+--- django/contrib/gis/gdal/libgdal.py	2016-11-01 10:36:44.000000000 -0300
++++ django/contrib/gis/gdal/libgdal.py	2016-11-03 06:10:55.290132740 -0300
 @@ -2,6 +2,7 @@
  
  import logging
