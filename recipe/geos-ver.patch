@@ -1,0 +1,11 @@
+--- Django-1.8.19.orig/django/contrib/gis/geos/libgeos.py	2018-03-06 11:17:02.000000000 -0300
++++ Django-1.8.19/django/contrib/gis/geos/libgeos.py	2018-04-02 10:13:26.000000000 -0300
+@@ -142,6 +142,8 @@
+     version.
+     """
+     ver = geos_version().decode()
++    if ver == "3.6.2-CAPI-1.10.2 0":
++        ver = "3.6.2-CAPI-1.10.2"
+     m = version_regex.match(ver)
+     if not m:
+         raise GEOSException('Could not parse version info string "%s"' % ver)
