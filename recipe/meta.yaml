@@ -14,30 +14,28 @@ source:
 
 build:
   number: 0
-  skip: True  # [py2k]
   script: python -m pip install --no-deps --ignore-installed .
   entry_points:
     - django-admin = django.core.management:execute_from_command_line
 
 requirements:
   build:
-    - python
+    - python >=3.5
     - pip
   run:
-    - python
+    - python >=3.5
     - pytz
 
 test:
   requires:
     # Test optional dependency.
-    - psycopg2  # [not win]
     - libgdal
     - boost 1.66.0
   imports:
     - django
     - django.apps
     - django.conf
-    - django.conf.app_template.migrations  # [not py27]
+    - django.conf.app_template.migrations
     - django.conf.locale
     - django.conf.locale.ar
     - django.conf.locale.az
@@ -131,23 +129,10 @@ test:
     - django.contrib.gis.db.backends.oracle
     - django.contrib.gis.db.backends.postgis
     - django.contrib.gis.db.backends.spatialite
-    - django.contrib.gis.forms  # [not win and not py2k]
-    - django.contrib.gis.gdal  # [not win and not py2k]
-    - django.contrib.gis.gdal.prototypes  # [not win and not py2k]
-    - django.contrib.gis.gdal.raster  # [not win and not py2k]
-    - django.contrib.gis.geometry  # [not win and not py2k]
-    - django.contrib.gis.geos  # [not win and not py2k]
-    - django.contrib.gis.geos.prototypes  # [not win and not py2k]
-    - django.contrib.gis.management  # [not win and not py2k]
-    - django.contrib.gis.management.commands  # [not win and not py2k]
-    - django.contrib.gis.serializers  # [not win and not py2k]
-    - django.contrib.gis.utils  # [not win and not py2k]
     - django.contrib.humanize
     - django.contrib.humanize.templatetags
     - django.contrib.messages
     - django.contrib.messages.storage
-    - django.contrib.postgres  # [not win]
-    - django.contrib.postgres.forms  # [not win]
     - django.contrib.redirects
     - django.contrib.redirects.migrations
     - django.contrib.sessions
@@ -183,7 +168,6 @@ test:
     - django.db.backends.dummy
     - django.db.backends.mysql
     - django.db.backends.oracle
-    - django.db.backends.postgresql_psycopg2  # [not win]
     - django.db.backends.sqlite3
     - django.db.migrations
     - django.db.migrations.operations
