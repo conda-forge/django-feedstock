@@ -14,9 +14,7 @@ Summary: A high-level Python Web framework that encourages rapid development and
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/django-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/django-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/django-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/django-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/django-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/django-feedstock/branch/master)
+All platforms: [![Circle CI](https://circleci.com/gh/conda-forge/django-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/django-feedstock)
 
 Current release info
 ====================
