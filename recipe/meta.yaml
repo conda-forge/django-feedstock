@@ -129,7 +129,6 @@ test:
     - django.contrib.gis.db.backends.oracle
     - django.contrib.gis.db.backends.postgis
     - django.contrib.gis.db.backends.spatialite
-    - django.contrib.gis.forms  # [not win and not py2k]
     - django.contrib.gis.geometry  # [not win and not py2k]
     - django.contrib.gis.geos  # [not win and not py2k]
     - django.contrib.gis.geos.prototypes  # [not win and not py2k]
