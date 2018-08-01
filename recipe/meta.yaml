@@ -1,4 +1,4 @@
-{% set version = "1.11.10" %}
+{% set version = "1.11.15" %}
 
 package:
   name: django
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/D/Django/Django-{{ version }}.tar.gz
-  sha256: 22383567385a9c406d8a5ce080a2694c82c6b733e157922197e8b393bb3aacd9
+  sha256: b18235d82426f09733d2de9910cee975cf52ff05e5f836681eb957d105a05a40
   patches:
     # Hard-code gdal and geos' paths to the corresponding conda packages.
     - libgdal.patch
@@ -20,7 +20,7 @@ build:
     - django-admin = django.core.management:execute_from_command_line
 
 requirements:
-  build:
+  host:
     - python
     - pip
   run:
@@ -32,7 +32,6 @@ test:
     # Test optional dependency.
     - psycopg2  # [not win]
     - libgdal
-    - boost 1.66.0  # only need to get conda-forge's libkml and boost instead of defaults
   imports:
     - django
     - django.apps
