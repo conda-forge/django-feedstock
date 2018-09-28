@@ -15,18 +15,18 @@ source:
 
 build:
   number: 0
-  noarch: python
+  # do only python2.7 due to HTMLParseError removed in python>=3.5
+  skip: True #[py3k]
   script: python -m pip install --no-deps --ignore-installed .
   entry_points:
     - django-admin = django.core.management:execute_from_command_line
 
 requirements:
-  # pin python version due to HTMLParseError removed in python>=3.5
   build:
-    - python <=3.4
+    - python
     - pip
   run:
-    - python <=3.4
+    - python
 
 test:
   requires:
