@@ -16,7 +16,7 @@ source:
 build:
   number: 0
   # do only python2.7 due to HTMLParseError removed in python>=3.5
-  skip: True #[py3k]
+  skip: True  # [py3k]
   script: python -m pip install --no-deps --ignore-installed .
   entry_points:
     - django-admin = django.core.management:execute_from_command_line
