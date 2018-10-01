@@ -23,7 +23,7 @@
 +elif 'darwin' in sys.platform:
 +    lib_path = os.path.join(sys.prefix, 'lib', 'libgdal.dylib')
 +elif os.name == 'nt':
-+    lib_path = os.path.join(sys.prefix, 'Library', 'bin', 'gdal201.dll')
++    lib_path = os.path.join(sys.prefix, 'Library', 'bin', 'gdal202.dll')
  
  if lib_path:
      lib_names = None
