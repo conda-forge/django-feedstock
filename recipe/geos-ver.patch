@@ -1,0 +1,11 @@
+--- django/contrib/gis/geos/libgeos.py 2018-09-19 22:42:48.506579904 +0200
++++ django/contrib/gis/geos/libgeos.py 2018-10-01 21:59:58.053363358 +0200
+@@ -119,7 +119,7 @@
+     is a release candidate (and what number release candidate), and the C API
+     version.
+     """
+-    ver = geos_version().decode()
++    ver = geos_version().decode().split(' ')[0]
+     m = version_regex.match(ver)
+     if not m:
+         raise GEOSException('Could not parse version info string "%s"' % ver)
