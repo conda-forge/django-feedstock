@@ -14,7 +14,7 @@ source:
     - geos-ver.patch
 
 build:
-  number: 0
+  number: 1000
   # do only python2.7 due to HTMLParseError removed in python>=3.5
   skip: True  # [py3k]
   entry_points:
