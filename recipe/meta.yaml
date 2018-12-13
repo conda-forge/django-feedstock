@@ -7,6 +7,7 @@ package:
 source:
   url: https://pypi.io/packages/source/D/Django/Django-{{ version }}.tar.gz
   sha256: 2039144fce8f1b603d03fa5a5643578df1ad007c4ed41a617f02a3943f7059a1
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"  # [not win]
   patches:
     # Hard-code gdal and geos' paths to the corresponding conda packages.
     - libgdal.patch
