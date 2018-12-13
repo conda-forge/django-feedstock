@@ -16,4 +16,4 @@ del %DOC_EPUB_BASE%\docicons-warning.png
 copy %DOC_BASE%\docicons-warning.png %DOC_EPUB_BASE%\docicons-warning.png
 
 :: now do the normal setup ...
-%PYTHON% -m pip install . --no-deps -vv"  # [not win]
+%PYTHON% -m pip install . --no-deps -vv
