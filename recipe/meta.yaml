@@ -13,14 +13,14 @@ source:
     - libgeos.patch
 
 build:
-  number: 1000
+  number: 1001
   skip: True  # [py2k]
   script: python -m pip install --no-deps --ignore-installed .
   entry_points:
     - django-admin = django.core.management:execute_from_command_line
 
 requirements:
-  build:
+  host:
     - python
     - pip
   run:
