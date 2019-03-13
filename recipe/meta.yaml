@@ -14,7 +14,7 @@ source:
 
 build:
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: python -m pip install --no-deps --ignore-installed .  # [not win]
   entry_points:
     - django-admin = django.core.management:execute_from_command_line
 
