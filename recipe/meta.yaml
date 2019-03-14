@@ -14,7 +14,8 @@ source:
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"  # [not win]
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  skip: True  # [win and py27]
   entry_points:
     - django-admin = django.core.management:execute_from_command_line
 
