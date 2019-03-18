@@ -13,9 +13,8 @@ source:
     - libgeos.patch
 
 build:
-  number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
-  skip: True  # [win and py==27]
+  number: 1
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"  # [unix or py>27]
   entry_points:
     - django-admin = django.core.management:execute_from_command_line
 
