@@ -15,7 +15,7 @@ source:
 build:
   number: 1
   skip: True  # [py2k]
-  script: python -m pip install --no-deps --ignore-installed .
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   entry_points:
     - django-admin = django.core.management:execute_from_command_line
 
