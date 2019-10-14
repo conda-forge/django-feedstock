@@ -3,7 +3,7 @@ channel_sources:
 channel_targets:
 - conda-forge main
 libgdal:
-- '2.4'
+- '3.0'
 pin_run_as_build:
   libgdal:
     max_pin: x.x

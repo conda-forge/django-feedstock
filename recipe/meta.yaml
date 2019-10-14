@@ -1,4 +1,4 @@
-{% set version = "1.11.24" %}
+{% set version = "1.11.25" %}
 
 package:
   name: django
@@ -6,14 +6,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/D/Django/Django-{{ version }}.tar.gz
-  sha256: 215c27453f775b6b1add83a185f76c2e2ab711d17786a6704bd62eabd93f89e3
+  sha256: 5314e8586285d532b7aa5c6d763b0248d9a977a37efec86d30f0212b82e8ef66
   patches:
     # Hard-code gdal and geos' paths to the corresponding conda packages.
     - libgdal.patch
     - libgeos.patch
 
 build:
-  number: 1
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"  # [unix or py>27]
   entry_points:
     - django-admin = django.core.management:execute_from_command_line
