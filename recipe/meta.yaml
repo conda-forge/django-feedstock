@@ -26,7 +26,8 @@ requirements:
   run:
     - python
     - pytz
-    - sqlparse
+    - sqlparse >=0.2.2
+    - asgiref >=3.2,<4
 
 test:
   requires:
@@ -155,7 +156,6 @@ test:
     - django.contrib.staticfiles
     - django.contrib.staticfiles.management
     - django.contrib.staticfiles.management.commands
-    - django.contrib.staticfiles.templatetags
     - django.contrib.syndication
     - django.core
     - django.core.checks
@@ -175,7 +175,6 @@ test:
     - django.db.backends.dummy
     - django.db.backends.mysql
     - django.db.backends.oracle
-    - django.db.backends.postgresql_psycopg2  # [not win]
     - django.db.backends.sqlite3
     - django.db.migrations
     - django.db.migrations.operations
