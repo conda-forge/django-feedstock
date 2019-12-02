@@ -1,5 +1,5 @@
---- Django-2.0.orig/django/contrib/gis/geos/libgeos.py	2017-12-02 12:36:16.000000000 -0200
-+++ Django-2.0/django/contrib/gis/geos/libgeos.py	2017-12-06 08:12:35.806014360 -0200
+--- Django-3.0.orig/django/contrib/gis/geos/libgeos.py	2019-12-02 07:54:40.000000000 -0300
++++ Django-3.0/django/contrib/gis/geos/libgeos.py	2019-12-02 17:13:19.446851528 -0300
 @@ -8,8 +8,8 @@
  """
  import logging
@@ -10,7 +10,7 @@
  
  from django.core.exceptions import ImproperlyConfigured
  from django.utils.functional import SimpleLazyObject, cached_property
-@@ -19,47 +19,27 @@
+@@ -19,46 +19,26 @@
  
  
  def load_geos():
@@ -18,8 +18,7 @@
 -    try:
 -        from django.conf import settings
 -        lib_path = settings.GEOS_LIBRARY_PATH
--    except (AttributeError, EnvironmentError,
--            ImportError, ImproperlyConfigured):
+-    except (AttributeError, ImportError, ImproperlyConfigured, OSError):
 -        lib_path = None
 -
 -    # Setting the appropriate names for the GEOS-C library.
@@ -71,7 +70,6 @@
 +        _lgeos = CDLL(libname)
 +    else:
 +        raise Exception('No valid platform name. Found {}'.format(os.name))
-+
      # Here we set up the prototypes for the initGEOS_r and finishGEOS_r
      # routines.  These functions aren't actually called until they are
      # attached to a GEOS context handle -- this actually occurs in

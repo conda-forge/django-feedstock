@@ -1,4 +1,4 @@
-{% set version = "2.2.8" %}
+{% set version = "3.0" %}
 
 package:
   name: django
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/D/Django/Django-{{ version }}.tar.gz
-  sha256: a4ad4f6f9c6a4b7af7e2deec8d0cbff28501852e5010d6c2dc695d3d1fae7ca0
+  sha256: d98c9b6e5eed147bc51f47c014ff6826bd1ab50b166956776ee13db5a58804ae
   patches:
     # Hard-code gdal and geos' paths to the corresponding conda packages.
     - libgdal.patch
@@ -26,7 +26,8 @@ requirements:
   run:
     - python
     - pytz
-    - sqlparse
+    - sqlparse >=0.2.2
+    - asgiref >=3.2,<4
 
 test:
   requires:
@@ -155,7 +156,6 @@ test:
     - django.contrib.staticfiles
     - django.contrib.staticfiles.management
     - django.contrib.staticfiles.management.commands
-    - django.contrib.staticfiles.templatetags
     - django.contrib.syndication
     - django.core
     - django.core.checks
@@ -175,7 +175,6 @@ test:
     - django.db.backends.dummy
     - django.db.backends.mysql
     - django.db.backends.oracle
-    - django.db.backends.postgresql_psycopg2  # [not win]
     - django.db.backends.sqlite3
     - django.db.migrations
     - django.db.migrations.operations
