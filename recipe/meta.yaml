@@ -1,4 +1,4 @@
-{% set version = "3.0.3" %}
+{% set version = "3.0.4" %}
 
 package:
   name: django
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/D/Django/Django-{{ version }}.tar.gz
-  sha256: 2f1ba1db8648484dd5c238fb62504777b7ad090c81c5f1fd8d5eb5ec21b5f283
+  sha256: 50b781f6cbeb98f673aa76ed8e572a019a45e52bdd4ad09001072dfd91ab07c8
   patches:
     # Hard-code gdal and geos' paths to the corresponding conda packages.
     - libgdal.patch
@@ -14,8 +14,8 @@ source:
 
 build:
   number: 0
-  skip: True  # [py2k]
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  skip: true  # [py2k]
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - django-admin = django.core.management:execute_from_command_line
 
@@ -31,6 +31,7 @@ requirements:
 
 test:
   requires:
+    - pip
     # Test optional dependency.
     - psycopg2  # [not win]
   imports:
@@ -196,13 +197,14 @@ test:
     - django.views.decorators
     - django.views.generic
   commands:
+    - pip check
     - django-admin --help
 
 about:
   home: http://www.djangoproject.com/
-  license: BSD 3-Clause
+  license: BSD-3-Clause
   license_file: LICENSE
-  summary: 'A high-level Python Web framework that encourages rapid development and clean, pragmatic design.'
+  summary: A high-level Python Web framework that encourages rapid development and clean, pragmatic design.
   dev_url: https://github.com/django/django
   doc_url: http://www.djangoproject.com/
 

@@ -3,7 +3,7 @@ About django
 
 Home: http://www.djangoproject.com/
 
-Package license: BSD 3-Clause
+Package license: BSD-3-Clause
 
 Feedstock license: BSD 3-Clause
 
