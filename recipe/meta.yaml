@@ -33,7 +33,7 @@ test:
   requires:
     - pip
     # Test optional dependency.
-    - psycopg2  # [not win and python_impl == "cpython"]
+    - psycopg2  # [not win]
   imports:
     - django
     - django.apps
