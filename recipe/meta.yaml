@@ -7,24 +7,20 @@ package:
 source:
   url: https://pypi.io/packages/source/D/Django/Django-{{ version }}.tar.gz
   sha256: 9aaa6a09678e1b8f0d98a948c56482eac3e3dd2ddbfb8de70a868135ef3b5e01
-  patches:
-    # Hard-code gdal and geos' paths to the corresponding conda packages.
-    - libgdal.patch
-    - libgeos.patch
 
 build:
   number: 0
-  skip: true  # [py2k]
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - django-admin = django.core.management:execute_from_command_line
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
   run:
-    - python
+    - python >=3.6
     - pytz
     - sqlparse >=0.2.2
     - asgiref >=3.2,<4
@@ -38,7 +34,7 @@ test:
     - django
     - django.apps
     - django.conf
-    - django.conf.app_template.migrations  # [not py27]
+    - django.conf.app_template.migrations
     - django.conf.locale
     - django.conf.locale.ar
     - django.conf.locale.az
@@ -132,10 +128,10 @@ test:
     - django.contrib.gis.db.backends.oracle
     - django.contrib.gis.db.backends.postgis
     - django.contrib.gis.db.backends.spatialite
-    - django.contrib.gis.geometry  # [not win and not py2k]
-    - django.contrib.gis.management  # [not win and not py2k]
-    - django.contrib.gis.management.commands  # [not win and not py2k]
-    - django.contrib.gis.serializers  # [not win and not py2k]
+    - django.contrib.gis.geometry  # [not win]
+    - django.contrib.gis.management  # [not win]
+    - django.contrib.gis.management.commands  # [not win]
+    - django.contrib.gis.serializers  # [not win]
     - django.contrib.humanize
     - django.contrib.humanize.templatetags
     - django.contrib.messages
