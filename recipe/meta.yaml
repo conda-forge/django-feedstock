@@ -1,4 +1,4 @@
-{% set version = "3.0.5" %}
+{% set version = "2.2.8" %}
 
 package:
   name: django
@@ -6,14 +6,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/D/Django/Django-{{ version }}.tar.gz
-  sha256: d4666c2edefa38c5ede0ec1655424c56dc47ceb04b6d8d62a7eac09db89545c1
+  sha256: a4ad4f6f9c6a4b7af7e2deec8d0cbff28501852e5010d6c2dc695d3d1fae7ca0
   patches:
     # Hard-code gdal and geos' paths to the corresponding conda packages.
     - libgdal.patch
     - libgeos.patch
 
 build:
-  number: 1
+  number: 0
   skip: true  # [py2k]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
@@ -27,7 +27,6 @@ requirements:
     - python
     - pytz
     - sqlparse >=0.2.2
-    - asgiref >=3.2,<4
 
 test:
   requires:
