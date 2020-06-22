@@ -22,16 +22,16 @@ build:
 
 requirements:
   host:
-    - python >=3.5
+    - python >=3.5,<4
     - pip
   run:
-    - python >=3.5
+    - python >=3.5,<4
 
 test:
   requires:
     # Test optional dependency.
     - psycopg2  # [not win]
-    - gdal 2.1.*
+    - libgdal
     - pytz
   imports:
     - django
