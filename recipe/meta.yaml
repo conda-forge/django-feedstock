@@ -16,16 +16,16 @@ source:
 build:
   number: 1
   noarch: python
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - django-admin = django.core.management:execute_from_command_line
 
 requirements:
-  build:
-    - python
-    - setuptools
+  host:
+    - python >=3.5
+    - pip
   run:
-    - python
+    - python >=3.5
 
 test:
   requires:
@@ -211,7 +211,7 @@ test:
 
 about:
   home: http://www.djangoproject.com/
-  license: BSD 3-Clause
+  license: BSD-3-Clause
   license_file: LICENSE
   summary: 'A high-level Python Web framework that encourages rapid development and clean, pragmatic design.'
 
