@@ -14,23 +14,24 @@ source:
     - libgeos.patch
 
 build:
-  number: 0
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  number: 1
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - django-admin = django.core.management:execute_from_command_line
 
 requirements:
-  build:
-    - python
-    - setuptools
+  host:
+    - python >=3.5,<4
+    - pip
   run:
-    - python
+    - python >=3.5,<4
 
 test:
   requires:
     # Test optional dependency.
     - psycopg2  # [not win]
-    - gdal 2.1.*
+    - libgdal
     - pytz
   imports:
     - django
@@ -210,7 +211,7 @@ test:
 
 about:
   home: http://www.djangoproject.com/
-  license: BSD 3-Clause
+  license: BSD-3-Clause
   license_file: LICENSE
   summary: 'A high-level Python Web framework that encourages rapid development and clean, pragmatic design.'
 
