@@ -5,11 +5,13 @@ Home: http://www.djangoproject.com/
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/django-feedstock/blob/master/LICENSE.txt)
 
 Summary: A high-level Python Web framework that encourages rapid development and clean, pragmatic design.
 
+Development: https://github.com/django/django
 
+Documentation: http://www.djangoproject.com/
 
 Current build status
 ====================
