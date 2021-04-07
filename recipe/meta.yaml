@@ -21,7 +21,7 @@ requirements:
     - pip
   run:
     - python >=3.6
-    - asgiref >=3.2.10,<3.4
+    - asgiref >=3.3.2,<4
     - pytz
     - sqlparse >=0.2.2
 
