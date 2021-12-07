@@ -9,7 +9,7 @@ source:
   sha256: d5a8a14da819a8b9237ee4d8c78dfe056ff6e8a7511987be627192225113ee75
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
@@ -17,11 +17,11 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.8
     - pip
   run:
-    - python >=3.6
-    - asgiref >=3.3.2,<4
+    - python >=3.8
+    - asgiref >=3.4.1
     - pytz
     - sqlparse >=0.2.2
 
