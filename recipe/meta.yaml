@@ -24,7 +24,7 @@ requirements:
     - asgiref >=3.4.1,<4
     - backports.zoneinfo  # [py<39]
     - sqlparse >=0.2.2
-    - tzdata  # [win]
+    - python-tzdata  # [win]
 
 test:
   requires:
