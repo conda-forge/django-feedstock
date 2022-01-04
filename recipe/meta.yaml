@@ -10,20 +10,21 @@ source:
 
 build:
   number: 0
-  noarch: python
+  skip: true   # [py<38]
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - django-admin = django.core.management:execute_from_command_line
 
 requirements:
   host:
-    - python >=3.8
+    - python
     - pip
   run:
-    - python >=3.8
-    - asgiref >=3.4.1
-    - pytz
+    - python
+    - asgiref >=3.4.1,<4
+    - backports.zoneinfo  # [py<39]
     - sqlparse >=0.2.2
+    - tzdata  # [win]
 
 test:
   requires:
