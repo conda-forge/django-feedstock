@@ -1,4 +1,4 @@
-{% set version = "4.0" %}
+{% set version = "4.0.1" %}
 
 package:
   name: django
@@ -6,24 +6,25 @@ package:
 
 source:
   url: https://pypi.io/packages/source/D/Django/Django-{{ version }}.tar.gz
-  sha256: d5a8a14da819a8b9237ee4d8c78dfe056ff6e8a7511987be627192225113ee75
+  sha256: 2485eea3cc4c3bae13080dee866ebf90ba9f98d1afe8fda89bfb0eb2e218ef86
 
 build:
-  number: 1
-  noarch: python
+  number: 0
+  skip: true   # [py<38]
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - django-admin = django.core.management:execute_from_command_line
 
 requirements:
   host:
-    - python >=3.8
+    - python
     - pip
   run:
-    - python >=3.8
-    - asgiref >=3.4.1
-    - pytz
+    - python
+    - asgiref >=3.4.1,<4
+    - backports.zoneinfo  # [py<39]
     - sqlparse >=0.2.2
+    - python-tzdata  # [win]
 
 test:
   requires:
