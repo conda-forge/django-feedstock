@@ -1,4 +1,4 @@
-{% set version = "4.0.1" %}
+{% set version = "4.0.2" %}
 
 package:
   name: django
@@ -6,11 +6,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/D/Django/Django-{{ version }}.tar.gz
-  sha256: 2485eea3cc4c3bae13080dee866ebf90ba9f98d1afe8fda89bfb0eb2e218ef86
+  sha256: 110fb58fb12eca59e072ad59fc42d771cd642dd7a2f2416582aa9da7a8ef954a
 
 build:
-  number: 1
-  skip: true   # [py<38]
+  number: 0
+  skip: true  # [py<38]
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - django-admin = django.core.management:execute_from_command_line
