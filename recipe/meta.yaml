@@ -1,4 +1,4 @@
-{% set version = "4.0.6" %}
+{% set version = "4.1" %}
 
 package:
   name: django
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/D/Django/Django-{{ version }}.tar.gz
-  sha256: a67a793ff6827fd373555537dca0da293a63a316fe34cb7f367f898ccca3c3ae
+  sha256: 032f8a6fc7cf05ccd1214e4a2e21dfcd6a23b9d575c6573cacc8c67828dbe642
 
 build:
   number: 0
@@ -21,7 +21,7 @@ requirements:
     - pip
   run:
     - python
-    - asgiref >=3.4.1,<4
+    - asgiref >=3.5.2,<4
     - backports.zoneinfo  # [py<39]
     - sqlparse >=0.2.2
     - python-tzdata  # [win]
