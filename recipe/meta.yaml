@@ -21,7 +21,7 @@ requirements:
     - pip
   run:
     - python
-    - asgiref >=3.4.1,<4
+    - asgiref >=3.5.2,<4
     - backports.zoneinfo  # [py<39]
     - sqlparse >=0.2.2
     - python-tzdata  # [win]
