@@ -9,22 +9,27 @@ source:
   sha256: b8d843714810ab88d59344507d4447be8b2cf12a49031363b6eed9f1b9b2280f
 
 build:
-  number: 0
-  skip: true  # [py<38]
-  script: {{ PYTHON }} -m pip install . -vv
+  number: 1
+  noarch: python
+  script:
+    # Don't need tzdata (pypi) pkg as the conda python package
+    # uses the tzdata (non-pypi) pkg
+    - sed -i.bak "/tzdata/d" setup.cfg
+    - {{ PYTHON }} -m pip install . -vv
   entry_points:
     - django-admin = django.core.management:execute_from_command_line
 
 requirements:
   host:
-    - python
+    - python >=3.8
     - pip
   run:
-    - python
+    - python >=3.8
     - asgiref >=3.5.2,<4
-    - backports.zoneinfo  # [py<39]
+    # Needs backports.zoneinfo only for py<39, but
+    # backports.zoneinfo conda package is empty for py>=39
+    - backports.zoneinfo
     - sqlparse >=0.2.2
-    - python-tzdata  # [win]
 
 test:
   requires:
