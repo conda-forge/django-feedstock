@@ -25,11 +25,11 @@ requirements:
     - pip
   run:
     - python >=3.8
-    - asgiref >=3.5.2,<4
+    - asgiref >=3.6.0,<4
     # Needs backports.zoneinfo only for py<39, but
     # backports.zoneinfo conda package is empty for py>=39
     - backports.zoneinfo
-    - sqlparse >=0.2.2
+    - sqlparse >=0.3.1
 
 test:
   requires:
