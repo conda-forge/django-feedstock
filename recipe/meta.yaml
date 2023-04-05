@@ -1,4 +1,4 @@
-{% set version = "4.1.7" %}
+{% set version = "4.2" %}
 
 package:
   name: django
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/D/Django/Django-{{ version }}.tar.gz
-  sha256: 44f714b81c5f190d9d2ddad01a532fe502fa01c4cb8faf1d081f4264ed15dcd8
+  sha256: c36e2ab12824e2ac36afa8b2515a70c53c7742f0d6eaefa7311ec379558db997
 
 build:
   number: 0
@@ -25,11 +25,11 @@ requirements:
     - pip
   run:
     - python >=3.8
-    - asgiref >=3.5.2,<4
+    - asgiref >=3.6.0,<4
     # Needs backports.zoneinfo only for py<39, but
     # backports.zoneinfo conda package is empty for py>=39
     - backports.zoneinfo
-    - sqlparse >=0.2.2
+    - sqlparse >=0.3.1
 
 test:
   requires:
