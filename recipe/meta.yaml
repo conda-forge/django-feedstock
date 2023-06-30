@@ -1,4 +1,4 @@
-{% set version = "3.2.16" %}
+{% set version = "3.2.19" %}
 
 package:
   name: django
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/D/Django/Django-{{ version }}.tar.gz
-  sha256: 3adc285124244724a394fa9b9839cc8cd116faf7d159554c43ecdaa8cdf0b94d
+  sha256: 21cc991466245d659ab79cb01204f9515690f8dae00e5eabde307f14d24d4d7d
 
 build:
   number: 0
