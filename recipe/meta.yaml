@@ -21,14 +21,11 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python >=3.10
     - pip
   run:
-    - python >=3.8
+    - python >=3.10
     - asgiref >=3.7.0
-    # Needs backports.zoneinfo only for py<39, but
-    # backports.zoneinfo conda package is empty for py>=39
-    - backports.zoneinfo
     - sqlparse >=0.3.1
 
 test:
@@ -152,8 +149,6 @@ test:
     - django.contrib.sessions.management.commands
     - django.contrib.sessions.migrations
     - django.contrib.sitemaps
-    - django.contrib.sitemaps.management
-    - django.contrib.sitemaps.management.commands
     - django.contrib.sites
     - django.contrib.sites.migrations
     - django.contrib.staticfiles
