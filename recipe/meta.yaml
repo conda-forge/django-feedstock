@@ -1,4 +1,4 @@
-{% set version = "5.0.3" %}
+{% set version = "4.2.11" %}
 
 package:
   name: django
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/D/Django/Django-{{ version }}.tar.gz
-  sha256: 5fb37580dcf4a262f9258c1f4373819aacca906431f505e4688e37f3a99195df
+  sha256: 6e6ff3db2d8dd0c986b4eec8554c8e4f919b5c1ff62a5b4390c17aff2ed6e5c4
 
 build:
   number: 0
@@ -21,11 +21,14 @@ build:
 
 requirements:
   host:
-    - python >=3.10
+    - python >=3.8
     - pip
   run:
-    - python >=3.10
-    - asgiref >=3.7.0,<4
+    - python >=3.8
+    - asgiref >=3.6.0,<4
+    # Needs backports.zoneinfo only for py<39, but
+    # backports.zoneinfo conda package is empty for py>=39
+    - backports.zoneinfo
     - sqlparse >=0.3.1
 
 test:
@@ -149,6 +152,8 @@ test:
     - django.contrib.sessions.management.commands
     - django.contrib.sessions.migrations
     - django.contrib.sitemaps
+    - django.contrib.sitemaps.management
+    - django.contrib.sitemaps.management.commands
     - django.contrib.sites
     - django.contrib.sites.migrations
     - django.contrib.staticfiles
