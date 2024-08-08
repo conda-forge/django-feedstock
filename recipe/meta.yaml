@@ -1,4 +1,4 @@
-{% set version = "5.0.8" %}
+{% set version = "5.1" %}
 
 package:
   name: django
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/D/Django/Django-{{ version }}.tar.gz
-  sha256: ebe859c9da6fead9c9ee6dbfa4943b04f41342f4cea2c4d8c978ef0d10694f2b
+  sha256: 848a5980e8efb76eea70872fb0e4bc5e371619c70fffbe48e3e1b50b2c09455d
 
 build:
   number: 0
@@ -25,7 +25,7 @@ requirements:
     - pip
   run:
     - python >=3.10
-    - asgiref >=3.7.0,<4
+    - asgiref >=3.8.1,<4
     - sqlparse >=0.3.1
 
 test:
