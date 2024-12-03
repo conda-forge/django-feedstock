@@ -1,3 +1,4 @@
+{% set python_min = '3.10' %}
 {% set version = "5.1.3" %}
 
 package:
@@ -11,21 +12,21 @@ source:
     - remove_tzdata.patch  # Don't need tzdata (pypi) pkg as the conda python package uses the tzdata (non-pypi) pkg
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script:
-    - {{ PYTHON }} -m pip install . -vv
+    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation 
   entry_points:
     - django-admin = django.core.management:execute_from_command_line
 
 requirements:
   host:
-    - python >=3.10
+    - python {{ python_min }}
     - setuptools >=61.0.0,<69.3.0
     - wheel
     - pip
   run:
-    - python >=3.10
+    - python >={{ python_min }}
     - asgiref >=3.8.1,<4
     - sqlparse >=0.3.1
 
@@ -34,6 +35,7 @@ test:
     - pip
     # Test optional dependency.
     - psycopg2  # [not win]
+    - python {{ python_min }}
   imports:
     - django
     - django.apps
