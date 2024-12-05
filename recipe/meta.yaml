@@ -21,11 +21,11 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - asgiref >=3.6.0,<4
     # Needs backports.zoneinfo only for py<39, but
     # backports.zoneinfo conda package is empty for py>=39
@@ -34,6 +34,7 @@ requirements:
 
 test:
   requires:
+    - python {{ python_min }}
     - pip
     # Test optional dependency.
     - psycopg2  # [not win]
