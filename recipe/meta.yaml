@@ -5,7 +5,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/D/Django/Django-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/D/Django/Django-{{ version }}.tar.gz
   sha256: 92bac5b4432a64532abb73b2ac27203f485e40225d2640a7fbef2b62b876e789
 
 build:
