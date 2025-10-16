@@ -1,4 +1,4 @@
-{% set version = "4.2.24" %}
+{% set version = "4.2.25" %}
 
 package:
   name: django
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/D/Django/django-{{ version }}.tar.gz
-  sha256: 40cd7d3f53bc6cd1902eadce23c337e97200888df41e4a73b42d682f23e71d80
+  sha256: 2391ab3d78191caaae2c963c19fd70b99e9751008da22a0adcc667c5a4f8d311
   patches:
     - remove_tzdata.patch  # Don't need tzdata (pypi) pkg as the conda python package uses the tzdata (non-pypi) pkg
 
