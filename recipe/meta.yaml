@@ -1,5 +1,5 @@
 {% set python_min = "3.12" %}
-{% set version = "6.0" %}
+{% set version = "6.0.1" %}
 
 package:
   name: django
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/D/Django/django-{{ version }}.tar.gz
-  sha256: 7b0c1f50c0759bbe6331c6a39c89ae022a84672674aeda908784617ef47d8e26
+  sha256: ed76a7af4da21551573b3d9dfc1f53e20dd2e6c7d70a3adc93eedb6338130a5f
   patches:
     # Don't need tzdata (pypi) pkg as the conda python package uses the tzdata (non-pypi) pkg
     - remove_tzdata.patch
