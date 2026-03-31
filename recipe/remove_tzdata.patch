@@ -1,11 +1,9 @@
-diff --git a/pyproject.toml b/pyproject.toml
-index 540bc47439..44c94d6844 100644
---- a/pyproject.toml
-+++ b/pyproject.toml
-@@ -9,7 +9,6 @@ requires-python = ">= 3.10"
+--- django-6.0.orig/pyproject.toml	2025-12-03 13:20:32.000000000 -0300
++++ django-6.0/pyproject.toml	2025-12-03 14:29:15.543223203 -0300
+@@ -9,7 +9,6 @@
  dependencies = [
-     "asgiref>=3.8.1",
-     "sqlparse>=0.3.1",
+     "asgiref>=3.9.1",
+     "sqlparse>=0.5.0",
 -    "tzdata; sys_platform == 'win32'",
  ]
  authors = [

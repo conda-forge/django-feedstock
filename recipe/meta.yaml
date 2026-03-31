@@ -9,7 +9,8 @@ source:
   url: https://pypi.org/packages/source/D/Django/django-{{ version }}.tar.gz
   sha256: cc7c5724baf6b8340871f85e76cb2326a40ff87f6bc2175e13a4d8a923e1874e
   patches:
-    - remove_tzdata.patch  # Don't need tzdata (pypi) pkg as the conda python package uses the tzdata (non-pypi) pkg
+    # Don't need tzdata (pypi) pkg as the conda python package uses the tzdata (non-pypi) pkg
+    - remove_tzdata.patch
 
 build:
   number: 0
@@ -26,8 +27,8 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - asgiref >=3.8.1
-    - sqlparse >=0.3.1
+    - asgiref >=3.9.1
+    - sqlparse >=0.5.0
 
 test:
   requires:
