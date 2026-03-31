@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/D/Django/django-{{ version }}.tar.gz
-  sha256: cc7c5724baf6b8340871f85e76cb2326a40ff87f6bc2175e13a4d8a923e1874e
+  sha256: 7f2d292ad8b9ee35e405d965fbbad293758b858c34bbf7f3df551aeeac6f02d3
   patches:
     # Don't need tzdata (pypi) pkg as the conda python package uses the tzdata (non-pypi) pkg
     - remove_tzdata.patch
