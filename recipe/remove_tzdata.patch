@@ -1,9 +1,9 @@
---- django-6.0.orig/pyproject.toml	2025-12-03 13:20:32.000000000 -0300
-+++ django-6.0/pyproject.toml	2025-12-03 14:29:15.543223203 -0300
+--- django-5.2.11.orig/pyproject.toml	2026-02-03 10:12:03.000000000 -0300
++++ django-5.2.11/pyproject.toml	2026-03-31 18:55:34.541192086 -0300
 @@ -9,7 +9,6 @@
  dependencies = [
-     "asgiref>=3.9.1",
-     "sqlparse>=0.5.0",
+     "asgiref>=3.8.1",
+     "sqlparse>=0.3.1",
 -    "tzdata; sys_platform == 'win32'",
  ]
  authors = [

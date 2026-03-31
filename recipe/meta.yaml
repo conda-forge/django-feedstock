@@ -26,8 +26,8 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - asgiref >=3.9.1
-    - sqlparse >=0.5.0
+    - asgiref >=3.8.1
+    - sqlparse >=0.3.1
 
 test:
   requires:
