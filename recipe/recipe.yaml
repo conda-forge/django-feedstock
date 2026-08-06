@@ -29,7 +29,7 @@ requirements:
     - setuptools >=83
     - pip
   run:
-    - python >${{ python_min }}
+    - python >=${{ python_min }}
     - asgiref >=3.9.1
     - sqlparse >=0.5.0
 
@@ -190,6 +190,9 @@ tests:
         - django.views.decorators
         - django.views.generic
       pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - requirements:
       run:
         - pip
