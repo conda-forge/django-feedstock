@@ -1,4 +1,4 @@
-{% set version = "5.2.17" %}
+{% set version = "5.2.19" %}
 
 package:
   name: django
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/D/Django/django-{{ version }}.tar.gz
-  sha256: 9d4d93be539a18ab80d058eb515900e10951e04c537c5a6b394fc49528d3251f
+  sha256: ad03d8abc51dbff95ebf34b27123cf0c26a3b62db7ba0cd520783686362533d1
   patches:
     # Don't need tzdata (pypi) pkg as the conda python package uses the tzdata (non-pypi) pkg
     - remove_tzdata.patch
@@ -22,7 +22,7 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - setuptools >=77.0.3
+    - setuptools >=83
     - pip
   run:
     - python >={{ python_min }}
@@ -202,7 +202,9 @@ test:
 about:
   home: http://www.djangoproject.com/
   license: BSD-3-Clause
-  license_file: LICENSE
+  license_file:
+    - LICENSE
+    - LICENSE.python
   summary: A high-level Python Web framework that encourages rapid development and clean, pragmatic design.
   dev_url: https://github.com/django/django
   doc_url: http://www.djangoproject.com/
